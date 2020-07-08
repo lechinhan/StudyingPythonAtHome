@@ -2,14 +2,17 @@ import math as m
 
 
 def isPrime(n):
+    if n == 1:
+        return False
     if n == 2:
-        return 1
-    if n == 1 or n % 2 == 0:
-        return 0
-    for i in range(3, int(m.sqrt(n) + 1)):
+        return True
+    if n > 2 and n % 2 == 0:
+        return False
+    max_divisor = m.floor(m.sqrt(n))
+    for i in range(3, 1+max_divisor, 2):
         if n % i == 0:
-            return 0
-    return 1
+            return False
+    return True
 
 
 n = int(input())
