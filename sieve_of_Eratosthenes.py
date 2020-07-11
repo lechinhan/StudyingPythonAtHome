@@ -18,7 +18,7 @@ def sieve_of_Eratosthenes(limit):
     for index in range(2, limit+1):
         if temp_sieve[index]:
             primes.append(index)
-    return primes
+    return primes[-1]
 
 
-print(sieve_of_Eratosthenes(10000000))
+print(sieve_of_Eratosthenes(1000000))
