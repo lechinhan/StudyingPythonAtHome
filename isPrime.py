@@ -1,16 +1,14 @@
-import math as m
+import math
 
 
 def isPrime(n):
-    if n == 1:
-        return False
-    if n == 2:
+    if n == 2 or n == 3:
         return True
-    if n > 2 and n % 2 == 0:
+    if n < 2 or n % 2 == 0 or n % 3 == 0:
         return False
-    max_divisor = m.floor(m.sqrt(n))
-    for i in range(3, 1+max_divisor, 2):
-        if n % i == 0:
+    lim = math.floor(math.sqrt(n))
+    for item in range(3, lim + 1, 6):
+        if n % item == 0 or n % (item+2) == 0:
             return False
     return True
 
